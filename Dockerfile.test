@@ -1,0 +1,7 @@
+FROM python:alpine
+
+WORKDIR /usr/app
+
+COPY test.py ./
+
+CMD ["python", "test.py"]

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  echo-server:
+    build: .
+    ports:
+      - '8080:7070'
+#    restart: always
+  test:
+    build:
+      dockerfile: ./Dockerfile.test
+    volumes: 
+      - ./test_log:/usr/app/test_log
